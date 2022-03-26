@@ -1,0 +1,7 @@
+{
+  "name": "simple-model-app",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "vue"
+}
