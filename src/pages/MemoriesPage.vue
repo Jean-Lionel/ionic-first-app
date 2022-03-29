@@ -1,41 +1,37 @@
 <template>
-    <ion-page>
-        <ion-header>
-            <ion-toolbar>
-                <ion-title>
-                Je suis en bonne santé
-                 </ion-title>
-            </ion-toolbar>
-            
-        </ion-header>
-        <ion-content>
-            <ion-list>
-                <ion-item>Lionel</ion-item>
-                <ion-item>Lionel 2</ion-item>
-                <ion-item>Lionel 3</ion-item>
-            </ion-list>
-           
-        </ion-content>
+        <ion-page>
+            <base-layout page-title="Bonjour tout le Monde">
+                <ion-list>
+                    <ion-item router-link="/memories/1">Lionel </ion-item>
+                    <ion-item router-link="/memories/2">Lionel 2</ion-item>
+                    <ion-item router-link="/memories/36">Lionel 36</ion-item>
+                </ion-list>
+            </base-layout>
+        </ion-page>
        
-    </ion-page>
-
 </template>
 
 <script>
-import {IonPage,IonHeader,IonTitle, IonContent, IonList, IonItem, IonToolbar} from '@ionic/vue';
-
+import {IonPage,IonList, IonItem} from "@ionic/vue";
 
 export default {
     components:{
         IonPage,
-        IonHeader,
-        IonTitle,
-        IonContent,
         IonList,
-        IonItem,
-        IonToolbar
-      
-    }
-    
+        IonItem
+    },
+    data(){
+        return {
+            memories : [
+                {
+                    id : "m1",
+                    image : "",
+                    title : "",
+                    description : "",
+                },
+            ],
+
+        }
+    }  
 }
 </script>

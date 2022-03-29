@@ -1,14 +1,48 @@
 <template>
-    <ion-page>
-        <h1>Je suis un Millionnaire</h1>
+ <ion-page>
+        <ion-header>
+            <ion-toolbar>
+                <ion-buttons slot="start">
+                    <ion-back-button :default-href="defaultBackLink"> </ion-back-button>
+                </ion-buttons>
+                
+                <ion-title> {{pageTitle}}</ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-content>
+          <slot></slot>        
+        </ion-content>
     </ion-page>
+   
 </template>
 
 <script>
-import {IonPage} from "@ionic/vue"
+import {
+    IonPage,
+    IonHeader,
+    IonTitle,
+    IonContent,
+    IonToolbar,
+    IonBackButton,
+    IonButtons
+    } from '@ionic/vue';
+
 export default {
+  props: ['pageTitle','defaultBackLink'],
     components:{
-        IonPage
+        IonPage,
+        IonHeader,
+        IonTitle,
+        IonContent,
+        IonToolbar,
+        IonBackButton,
+        IonButtons
+      
+    },
+    data(){
+       return {
+          
+       }
     }
     
 }
