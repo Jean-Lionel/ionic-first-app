@@ -14,13 +14,16 @@
                 <ion-item>Lionel 2</ion-item>
                 <ion-item>Lionel 3</ion-item>
             </ion-list>
+           
         </ion-content>
-
+       
     </ion-page>
+
 </template>
 
 <script>
 import {IonPage,IonHeader,IonTitle, IonContent, IonList, IonItem, IonToolbar} from '@ionic/vue';
+
 
 export default {
     components:{
@@ -31,6 +34,7 @@ export default {
         IonList,
         IonItem,
         IonToolbar
+      
     }
     
 }
