@@ -1,8 +1,6 @@
 <template>
     <ion-page>
-        <base-layout :page-title="loadMemory ? loadMemory.title : 'loiding'" default-back-link="/">
-                
-                
+        <base-layout :page-title="loadMemory ? loadMemory.title : 'loiding'" default-back-link="/">   
         <ion-card v-if="loadMemory">
         <ion-img :src="loadMemory.image"></ion-img>
         <ion-card-content>
@@ -32,9 +30,11 @@ import {
     IonCard,
     IonImg,
     IonCardContent,
+    IonCardHeader,
     IonCardTitle,
     IonCardSubtitle,
     IonButton,
+    IonItem,
     IonIcon,
     } from '@ionic/vue'
 
@@ -43,6 +43,8 @@ export default {
         IonPage,
         IonCard,
         IonImg,
+        IonItem,
+        IonCardHeader,
         IonCardContent,
         IonCardTitle,
         IonCardSubtitle,
@@ -59,9 +61,7 @@ export default {
     },
     computed:{
         loadMemory(){
-            const a = this.$store.getters.memory(this.memoryId);
-            console.log(a, this.memoryId);
-            return a;
+            return this.$store.getters.memory(this.memoryId);
         }
     }
 }

@@ -1,32 +1,21 @@
 <template>
         <ion-page>
             <base-layout page-title="All Memories">
-                <ion-list>
-                    <ion-item v-for="memory in memories" :router-link="`/memories/${memory.id}`" :key="memory.id">
-                        
-                        <ion-thumbnail slot="start">
-                            <ion-img :src="memory.image" :alt="memory.title"></ion-img>
-                        </ion-thumbnail>
-                            <ion-label> {{memory.title}}</ion-label>
-                     </ion-item>
-                   
-                </ion-list>
+               <memories-liste :memories="memories" /> 
             </base-layout>
         </ion-page>
        
 </template>
 
 <script>
-import {IonPage,IonList, IonItem, IonImg, IonThumbnail, IonLabel} from "@ionic/vue";
+import {IonPage} from "@ionic/vue";
+import MemoriesListe from '../components/memories/MemoriesListe.vue';
 
 export default {
     components:{
         IonPage,
-        IonList,
-        IonItem,
-        IonImg,
-        IonThumbnail,
-        IonLabel
+        MemoriesListe,
+
     },
     data(){
         return {     }
