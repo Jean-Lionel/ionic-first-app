@@ -1,7 +1,7 @@
 <template>
     <ion-page>
         <base-layout page-title="Add Memory" default-back-link="/memories">
-            <creatememory-form></creatememory-form>
+            <creatememory-form @save-memory="saveMemory"></creatememory-form>
         </base-layout>
         
     </ion-page>
@@ -14,6 +14,12 @@ export default {
     components:{
         IonPage,
         CreatememoryForm
+    },
+    methods:{
+        saveMemory(memorieData){
+            this.$store.dispatch("addMemory", memorieData);
+            this.$router.replace("/memories");
+        }
     }
     
 }
