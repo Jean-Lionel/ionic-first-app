@@ -1,7 +1,7 @@
 <template>
   <ion-img :src="memory.image" :alt="memory.title"></ion-img>
-  <h2>{{memory.title}}</h2>
-  <p>{{memory.body}}</p>
+  <h2 class="ion-text-center">{{memory.title}}</h2>
+  <p class="ion-text-center">{{memory.body}}</p>
 </template>
 
 <script>
